@@ -1,9 +1,7 @@
 # stqa
 
-TO Run :
-     ```
-     npm i
-     npm start
-     ```
-    
-   
+to run : 
+```
+npm i
+npm start
+```
