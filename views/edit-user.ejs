@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+</head>
+<body>
+    <h1><center>Edit User</center></h1>
+    
+    <form class ="product-form" action="/edit-user-details" method="POST">
+    <div class="form-control">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required value=<%= userDetails.name %> maxlength ="16" >
+    </div>
+    <div class="form-control">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required value=<%= userDetails.email %>>
+    </div>
+    <div class="form-control">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="enter new password" minlength="8" >
+    </div>
+    <button class ="btn" type="submit">Edit</button>
+    <input type="hidden" name="id" value=<%= userDetails.id %>>
+    </form>
+</body>
+</html>

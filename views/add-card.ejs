@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Card</title>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+
+</head>
+<body>
+    <h1 ><center>Add Card</center></h1>
+    <form class="product-form" action="/add-user-card-details" method="post">
+        <div class="form-control">
+            <input type="text" name="title" required minlength="8" >
+        </div>
+        <button class="btn"  type="submit">Add Card</button>
+        <input type="hidden" name="id" value = <%= userId %>>
+    </form>
+</body>
+</html>

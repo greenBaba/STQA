@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/forms.css">
+
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1><center>Dashboard</center></h1>
+        </header>
+    <div class="cards">
+        <div class="form-button">
+            <form action="/edit-user" method="post">
+                <button class ="btn" type="submit">
+                    Edit User Details
+                </button>
+                <input type="hidden" name="id" value=<%= userId %> >
+            </form>
+        </div>
+        
+        <div class="form-button">
+            <form action="/add-user-card" method="post">
+                <button type="submit" class="btn">
+                    Add Card
+                </button>
+                <input type="hidden" name="id" value=<%= userId %> >
+            </form>
+        </div>
+
+        <div class="form-button">
+            <form action="/rate-us" method="post">
+                <button type="submit" class="btn">
+                    Rate Us
+                </button>
+                <input type="hidden" name="id" value=<%= userId %> >
+            </form>
+        </div>
+        
+        <div class="form-button">
+            <a href="/" class ="btn">Logout</a>
+        </div>
+    
+    </div>
+    
+    <hr>
+        <ul>
+            <% i = 0 %>
+            <% for (card of cards){ %>
+                <div class="card-element">
+                    <li class="card-text"><%= card %> </li>
+                    <form action="/card-done" method="post">
+                        <button class ="btn" type="submit">
+                            Done
+                        </button>
+                        <input type="hidden" name="index" value= <%= i %>>
+                        <input type="hidden" name="id" value=<%= userId %> >
+                    </form>
+                </div> 
+                <% i+=1 %>
+            <% }%>
+        </ul>
+
+    </div>
+    
+</body>
+</html>
