@@ -13,42 +13,45 @@
         <header>
             <h1><center>Dashboard</center></h1>
         </header>
-    <div class="cards">
-        <div class="form-button">
-            <form action="/edit-user" method="post">
-                <button class ="btn" type="submit">
-                    Edit User Details
-                </button>
-                <input type="hidden" name="id" value=<%= userId %> >
-            </form>
-        </div>
+        <center>
+            <div class="cards" >
+                <div class="form-button" style="margin-left : 550px;">
+                    <form action="/edit-user" method="post">
+                        <button class ="btn" type="submit">
+                            Edit User Details
+                        </button>
+                        <input type="hidden" name="id" value=<%= userId %> >
+                    </form>
+                </div>
+                
+                <div class="form-button">
+                    <form action="/add-user-card" method="post">
+                        <button type="submit" class="btn">
+                            Add Card
+                        </button>
+                        <input type="hidden" name="id" value=<%= userId %> >
+                    </form>
+                </div>
         
-        <div class="form-button">
-            <form action="/add-user-card" method="post">
-                <button type="submit" class="btn">
-                    Add Card
-                </button>
-                <input type="hidden" name="id" value=<%= userId %> >
-            </form>
-        </div>
-
-        <div class="form-button">
-            <form action="/rate-us" method="post">
-                <button type="submit" class="btn">
-                    Feedback
-                </button>
-                <input type="hidden" name="id" value=<%= userId %> >
-            </form>
-        </div>
-        
-        <div class="form-button">
-            <a href="/" class ="btn">Logout</a>
-        </div>
+                <div class="form-button">
+                    <form action="/rate-us" method="post">
+                        <button type="submit" class="btn">
+                            Feedback
+                        </button>
+                        <input type="hidden" name="id" value=<%= userId %> >
+                    </form>
+                </div>
+                
+                <div class="form-button">
+                    <a href="/" class ="btn">Logout</a>
+                </div>
+            
+            </div>
+        </center>
     
-    </div>
     
     <hr>
-        <ul>
+        <ol>
             <% i = 0 %>
             <% for (card of cards){ %>
                 <div class="card-element">
@@ -63,7 +66,7 @@
                 </div> 
                 <% i+=1 %>
             <% }%>
-        </ul>
+        </ol>
 
     </div>
     
